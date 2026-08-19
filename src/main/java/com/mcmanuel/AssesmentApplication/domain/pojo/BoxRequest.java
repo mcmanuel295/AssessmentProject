@@ -1,6 +1,6 @@
 package com.mcmanuel.AssesmentApplication.domain.pojo;
 
-import com.mcmanuel.AssesmentApplication.domain.entity.Camera;
+import com.mcmanuel.AssesmentApplication.domain.Camera;
 import com.mcmanuel.AssesmentApplication.domain.entity.Item;
 import lombok.Getter;
 

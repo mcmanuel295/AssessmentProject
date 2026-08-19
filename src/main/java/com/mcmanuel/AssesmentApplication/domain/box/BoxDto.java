@@ -1,5 +1,6 @@
 package com.mcmanuel.AssesmentApplication.domain.entity;
 
+import com.mcmanuel.AssesmentApplication.domain.Camera;
 import lombok.Builder;
 import lombok.Getter;
 

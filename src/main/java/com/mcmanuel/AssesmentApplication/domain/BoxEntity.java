@@ -1,9 +1,10 @@
-package com.mcmanuel.AssesmentApplication.domain.entity;
+package com.mcmanuel.AssesmentApplication.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.*;
+;
 
 import java.util.List;
 
@@ -32,7 +33,10 @@ class BoxEntity {
     @Column(name = "state",nullable = false)
     private int batteryLevel;
 
+    @ElementCollection
+    @CollectionTable(name = "camera")
     private List<Camera> cameras;
+
     private List<Item> items;
 
     @Enumerated(EnumType.STRING)
