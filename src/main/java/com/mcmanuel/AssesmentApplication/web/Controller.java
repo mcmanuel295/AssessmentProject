@@ -1,8 +1,8 @@
 package com.mcmanuel.AssesmentApplication.web;
 
-import com.mcmanuel.AssesmentApplication.domain.entity.BoxDto;
-import com.mcmanuel.AssesmentApplication.domain.entity.Item;
-import com.mcmanuel.AssesmentApplication.domain.entity.ServiceImpl;
+import com.mcmanuel.AssesmentApplication.domain.box.BoxDto;
+import com.mcmanuel.AssesmentApplication.domain.box.Item;
+import com.mcmanuel.AssesmentApplication.domain.box.ServiceImpl;
 import com.mcmanuel.AssesmentApplication.domain.pojo.BoxRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
