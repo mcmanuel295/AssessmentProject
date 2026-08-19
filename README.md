@@ -36,7 +36,6 @@ Using the Maven Wrapper on macOS or Linux:
 ./mvnw clean package -DskipTests
 ```
 
-The packaged JAR is created in `target/`.
 
 ## Run
 

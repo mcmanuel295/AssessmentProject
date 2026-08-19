@@ -1,7 +1,5 @@
-package com.mcmanuel.AssesmentApplication.domain.entity;
+package com.mcmanuel.AssesmentApplication.domain.box;
 
-
-import com.mcmanuel.AssesmentApplication.domain.box.BoxEntity;
 
 class DtoMapper {
     public static BoxEntity toBox(BoxDto boxDto) {

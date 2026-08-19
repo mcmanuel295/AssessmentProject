@@ -1,5 +1,6 @@
-package com.mcmanuel.AssesmentApplication.domain;
+package com.mcmanuel.AssesmentApplication.domain.box;
 
+import com.mcmanuel.AssesmentApplication.domain.Camera;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
