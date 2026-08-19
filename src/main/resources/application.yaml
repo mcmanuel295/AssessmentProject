@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: AssessmentApplication
+
+  datasource:
+    username:
+    password:
+    url:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.
+    hibernate:
+      ddl-auto: update
+    database: MYSQL
+    show-sql: false
+    generate-ddl: true
+
+server:
+  port: 8080
+  shutdown: GRACEFUL
