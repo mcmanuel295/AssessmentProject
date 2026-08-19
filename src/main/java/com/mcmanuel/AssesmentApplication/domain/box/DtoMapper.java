@@ -1,7 +1,9 @@
 package com.mcmanuel.AssesmentApplication.domain.entity;
 
 
-class Mapper {
+import com.mcmanuel.AssesmentApplication.domain.box.BoxEntity;
+
+class DtoMapper {
     public static BoxEntity toBox(BoxDto boxDto) {
         return BoxEntity.builder()
                 .boxId(boxDto.boxId())
