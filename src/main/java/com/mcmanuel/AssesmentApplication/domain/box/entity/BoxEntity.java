@@ -1,5 +1,6 @@
 package com.mcmanuel.AssesmentApplication.domain.box.entity;
 
+import com.mcmanuel.AssesmentApplication.domain.pojo.Battery;
 import com.mcmanuel.AssesmentApplication.domain.pojo.Camera;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
@@ -26,13 +27,11 @@ public class BoxEntity {
 
     @Max(value = 500)
     @Min(value = 0)
-    @Column(name = "state",nullable = false)
+    @Column(name = "weight",nullable = false)
     private int weight;
 
-    @Max(value = 100)
-    @Min(value = 0)
-    @Column(name = "state",nullable = false)
-    private int batteryLevel;
+
+    private Battery battery;
 
     @ElementCollection
     @CollectionTable(name = "camera")
