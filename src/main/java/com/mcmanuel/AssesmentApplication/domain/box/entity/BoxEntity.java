@@ -1,7 +1,6 @@
 package com.mcmanuel.AssesmentApplication.domain.box.entity;
 
 import com.mcmanuel.AssesmentApplication.domain.pojo.Battery;
-import com.mcmanuel.AssesmentApplication.domain.pojo.Camera;
 import com.mcmanuel.AssesmentApplication.domain.pojo.Item;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
@@ -37,9 +36,6 @@ public class BoxEntity {
     })
     private Battery battery;
 
-    @ElementCollection
-    @CollectionTable(name = "camera", joinColumns = @JoinColumn(name = "box_id"))
-    private List<Camera> cameras;
 
     @ElementCollection
     @CollectionTable(name = "items", joinColumns = @JoinColumn(name = "box_id"))

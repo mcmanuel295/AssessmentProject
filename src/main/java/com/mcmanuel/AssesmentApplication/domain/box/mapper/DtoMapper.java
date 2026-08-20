@@ -12,7 +12,6 @@ public final class DtoMapper {
                 .weight(boxDto.weight())
                 .battery(boxDto.battery())
                 .items(boxDto.items())
-                .cameras(boxDto.cameras())
                 .build();}
 
     public static BoxDto toDto(BoxEntity box) {
@@ -22,7 +21,6 @@ public final class DtoMapper {
                 .weight(box.getWeight())
                 .battery(box.getBattery())
                 .items(box.getItems())
-                .cameras(box.getCameras())
                 .build();
     }
 }
