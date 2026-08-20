@@ -1,7 +1,7 @@
 package com.mcmanuel.AssesmentApplication.domain.box.service;
 
 import com.mcmanuel.AssesmentApplication.domain.box.dto.BoxDto;
-import com.mcmanuel.AssesmentApplication.domain.box.entity.Item;
+import com.mcmanuel.AssesmentApplication.domain.pojo.Item;
 import com.mcmanuel.AssesmentApplication.domain.pojo.BoxRequest;
 
 import java.util.List;

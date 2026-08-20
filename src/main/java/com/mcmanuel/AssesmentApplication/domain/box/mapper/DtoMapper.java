@@ -10,7 +10,7 @@ public final class DtoMapper {
                 .boxId(boxDto.boxId())
                 .txRef(boxDto.txRef())
                 .weight(boxDto.weight())
-                .batteryLevel(boxDto.batteryLevel())
+                .battery(boxDto.battery())
                 .items(boxDto.items())
                 .cameras(boxDto.cameras())
                 .build();}
@@ -20,7 +20,7 @@ public final class DtoMapper {
                 .boxId(box.getBoxId())
                 .txRef(box.getTxRef())
                 .weight(box.getWeight())
-                .batteryLevel(box.getBatteryLevel())
+                .battery(box.getBattery())
                 .items(box.getItems())
                 .cameras(box.getCameras())
                 .build();

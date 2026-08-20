@@ -1,4 +1,4 @@
-package com.mcmanuel.AssesmentApplication.domain.box.entity;
+package com.mcmanuel.AssesmentApplication.domain.pojo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

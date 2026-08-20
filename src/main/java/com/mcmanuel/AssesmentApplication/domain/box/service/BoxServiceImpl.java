@@ -2,7 +2,7 @@ package com.mcmanuel.AssesmentApplication.domain.box.service;
 
 import com.mcmanuel.AssesmentApplication.domain.box.dto.BoxDto;
 import com.mcmanuel.AssesmentApplication.domain.box.entity.BoxEntity;
-import com.mcmanuel.AssesmentApplication.domain.box.entity.Item;
+import com.mcmanuel.AssesmentApplication.domain.pojo.Item;
 import com.mcmanuel.AssesmentApplication.domain.box.entity.State;
 import com.mcmanuel.AssesmentApplication.domain.box.mapper.DtoMapper;
 import com.mcmanuel.AssesmentApplication.domain.box.repository.BoxRepository;
