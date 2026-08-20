@@ -17,5 +17,5 @@ public class Battery {
 
     @Max(value = 100)
     @Min(value = 0)
-    private int batteryLevel;
+    private int batteryCapacity;
 }
