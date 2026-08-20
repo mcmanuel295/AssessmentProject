@@ -5,7 +5,7 @@ spring:
   datasource:
     username: root
     password: assessment
-    url: com.mysql.jdbc
+    url: jdbc:mysql://localhost:3306:/assessment_db
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.

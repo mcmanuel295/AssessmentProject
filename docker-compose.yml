@@ -5,7 +5,7 @@ services:
     container_name: assessment_db
     environment:
       MYSQL_ROOT_PASSWORD: assessment
-      MYSQL_DATABASE: assessment
+      MYSQL_DATABASE: assessment_db
     ports:
       - "3306:3306"
     volumes:
