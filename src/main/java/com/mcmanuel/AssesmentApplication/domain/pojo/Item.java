@@ -19,14 +19,15 @@ import lombok.Setter;
 @Embeddable
 public class Item {
 
-    @Column(name = "item_name",length = 20)
+    @Column(name = "item_name",length = 20,nullable = false)
     @Size(max = 20, message = "Value must be 20 characters or less")
     @Pattern(regexp = "^[A-Z0-9_-]+$", message = "Only uppercase letters, numbers, hyphen and underscores allowed")
     private String itemName;
 
+    @Column(name = "weight",nullable = false)
     private int itemWeight;
 
-    @Column(name = "item_name",length = 20)
+    @Column(name = "item_code",length = 20,nullable = false)
     @Pattern(regexp = "^[A-Z0-9_]+$", message = "Only uppercase letters, numbers, and underscores allowed")
     private String itemCode;
     
