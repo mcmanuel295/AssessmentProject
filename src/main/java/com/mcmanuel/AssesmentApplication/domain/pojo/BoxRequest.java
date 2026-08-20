@@ -5,7 +5,6 @@ public record BoxRequest(
         String txRef,
         int weight,
         int batteryLevel,
-        List<Camera> cameras,
         List<Item> items
 ) {
 }
