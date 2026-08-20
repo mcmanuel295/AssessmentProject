@@ -49,18 +49,6 @@ public class BoxServiceImpl implements BoxService {
     @Override
     public BoxDto loadBox(String txRef,List<Item> items) {
         BoxEntity box =repo.findByTxRef(txRef).orElseThrow(  () -> new RuntimeException("Box with reference "+txRef+" not found"));
-        for(Item eachItem : items){
-            loadBox(txRef,eachItem);
-        }
-
-        box.setState(State.LOADED);
-        return DtoMapper.toDto(box);
-    }
-
-//    Load with a single item
-    @Override
-    public BoxDto loadBox(String txRef, Item item) {
-        BoxEntity box =repo.findByTxRef(txRef).orElseThrow(  () -> new RuntimeException("Box with reference "+txRef+" not found"));
 
         //  checking battery percent before loading
         if (box.getBattery().getBatteryCapacity()< 25) {
@@ -69,15 +57,22 @@ public class BoxServiceImpl implements BoxService {
 
         box.setState(State.LOADING);
 
-        if (box.getWeight()+item.getItemWeight() > 500) {
-            throw new RuntimeException("weight exceeded");
+
+        for(Item singleItem : items){
+            if (box.getWeight()+singleItem.getItemWeight() > 500) {
+                throw new RuntimeException("weight exceeded");
+            }
+
+            box.getItems().add(singleItem);
+            box.setWeight(box.getWeight()+singleItem.getItemWeight());
+
+            repo.save(box);
+            box.setState(State.LOADED);
         }
 
-        box.getItems().add(item);
-        box.setWeight(box.getWeight()+item.getItemWeight());
-
-        return DtoMapper.toDto(repo.save(box));
+            return DtoMapper.toDto(box);
     }
+
 
     @Override
     public List<Item> getItems(String boxId) {

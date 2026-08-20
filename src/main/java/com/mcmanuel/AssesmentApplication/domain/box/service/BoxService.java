@@ -11,7 +11,6 @@ public interface BoxService {
     BoxDto createBox(BoxRequest boxRequest);
     BoxDto getBoxByTxRef(String txRef);
     BoxDto loadBox(String txRef,List<Item> items);
-    BoxDto loadBox(String txRef,Item items);
     List<Item> getItems(String boxId);
     List<BoxDto> getAllBoxes();
     List<BoxDto> getAvailableBoxes();

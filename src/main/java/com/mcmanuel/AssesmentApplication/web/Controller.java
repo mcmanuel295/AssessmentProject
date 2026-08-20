@@ -42,15 +42,6 @@ public class Controller{
         return ResponseEntity.ok(boxDto);
     }
 
-    @PostMapping("/load/{txRef}")
-    public ResponseEntity<BoxDto> loadBox(@PathVariable @Valid String txRef,@RequestBody Item items){
-        BoxDto boxDto =service.loadBox(txRef,items);
-        if (boxDto == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return ResponseEntity.ok(boxDto);
-    }
-
     @GetMapping("/{txRef}/items")
     public ResponseEntity<List<Item>> getItmes(String txRef){
         List<Item> boxItems = service.getItems(txRef);
