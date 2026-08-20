@@ -23,7 +23,7 @@ public class BoxEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer boxId;
 
-    @Column(name = "state",nullable = false)
+    @Column(name = "txRef",nullable = false)
     private String txRef;
 
     @Max(value = 500)
@@ -31,8 +31,10 @@ public class BoxEntity {
     @Column(name = "weight",nullable = false)
     private int weight;
 
-    @ElementCollection
-    @CollectionTable(name = "battery", joinColumns = @JoinColumn(name = "box_id"))
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "batteryCapacity",column = @Column( name= "battery_capacity"))
+    })
     private Battery battery;
 
     @ElementCollection
