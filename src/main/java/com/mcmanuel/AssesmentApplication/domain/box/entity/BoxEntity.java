@@ -29,12 +29,13 @@ public class BoxEntity {
     @Min(value = 0)
     @Column(name = "weight",nullable = false)
     private int weight;
-
-
+    
+    @ElementCollection
+    @CollectionTable(name = "battery", joinColumns = @JoinColumn(name = "box_id"))
     private Battery battery;
 
     @ElementCollection
-    @CollectionTable(name = "camera")
+    @CollectionTable(name = "camera", joinColumns = @JoinColumn(name = "box_id"))
     private List<Camera> cameras;
 
     private List<Item> items;

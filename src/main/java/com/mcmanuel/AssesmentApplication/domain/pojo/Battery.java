@@ -1,5 +1,6 @@
 package com.mcmanuel.AssesmentApplication.domain.pojo;
 
+import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Embeddable
 public class Battery {
 
     @Max(value = 100)
