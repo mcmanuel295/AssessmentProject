@@ -3,9 +3,9 @@ spring:
     name: AssessmentApplication
 
   datasource:
-    username:
-    password:
-    url:
+    username: root
+    password: assessment
+    url: com.mysql.jdbc
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.

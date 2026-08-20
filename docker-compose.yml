@@ -1,0 +1,18 @@
+name: assessment
+services:
+  database:
+    image: mysql:latest
+    container_name: assessment_db
+    environment:
+      MYSQL_ROOT_PASSWORD: assessment
+      MYSQL_DATABASE: assessment
+    ports:
+      - "3306:3306"
+    volumes:
+      - var:/var/lib/mysql
+    networks:
+      - net
+networks:
+  net:
+volumes:
+  var:
