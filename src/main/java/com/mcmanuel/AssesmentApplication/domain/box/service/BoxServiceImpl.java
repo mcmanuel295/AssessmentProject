@@ -1,5 +1,11 @@
-package com.mcmanuel.AssesmentApplication.domain.box;
+package com.mcmanuel.AssesmentApplication.domain.box.service;
 
+import com.mcmanuel.AssesmentApplication.domain.box.dto.BoxDto;
+import com.mcmanuel.AssesmentApplication.domain.box.entity.BoxEntity;
+import com.mcmanuel.AssesmentApplication.domain.box.entity.Item;
+import com.mcmanuel.AssesmentApplication.domain.box.entity.State;
+import com.mcmanuel.AssesmentApplication.domain.box.mapper.DtoMapper;
+import com.mcmanuel.AssesmentApplication.domain.box.repository.BoxRepository;
 import com.mcmanuel.AssesmentApplication.domain.pojo.BoxRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,8 +15,8 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ServiceImpl implements ServiceIntf {
-    private final Repository repo;
+public class BoxServiceImpl implements BoxService {
+    private final BoxRepository repo;
 
     @Override
     public BoxDto createBox(BoxRequest boxRequest) {

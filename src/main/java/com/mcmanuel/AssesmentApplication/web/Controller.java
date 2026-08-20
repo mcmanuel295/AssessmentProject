@@ -1,8 +1,8 @@
 package com.mcmanuel.AssesmentApplication.web;
 
-import com.mcmanuel.AssesmentApplication.domain.box.BoxDto;
-import com.mcmanuel.AssesmentApplication.domain.box.Item;
-import com.mcmanuel.AssesmentApplication.domain.box.ServiceImpl;
+import com.mcmanuel.AssesmentApplication.domain.box.dto.BoxDto;
+import com.mcmanuel.AssesmentApplication.domain.box.entity.Item;
+import com.mcmanuel.AssesmentApplication.domain.box.service.BoxService;
 import com.mcmanuel.AssesmentApplication.domain.pojo.BoxRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RequestMapping("/boxes")
 public class Controller{
-    private final ServiceImpl service;
+    private final BoxService service;
 
     @PostMapping("/")
     public ResponseEntity<BoxDto> createBox(@Valid @RequestBody BoxRequest boxRequest){

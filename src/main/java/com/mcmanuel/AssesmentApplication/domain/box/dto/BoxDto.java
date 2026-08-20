@@ -1,8 +1,8 @@
-package com.mcmanuel.AssesmentApplication.domain.box;
+package com.mcmanuel.AssesmentApplication.domain.box.dto;
 
 import com.mcmanuel.AssesmentApplication.domain.Camera;
-import com.mcmanuel.AssesmentApplication.domain.box.Item;
-import com.mcmanuel.AssesmentApplication.domain.box.State;
+import com.mcmanuel.AssesmentApplication.domain.box.entity.Item;
+import com.mcmanuel.AssesmentApplication.domain.box.entity.State;
 import lombok.Builder;
 import lombok.Getter;
 

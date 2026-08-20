@@ -1,4 +1,4 @@
-package com.mcmanuel.AssesmentApplication.domain.box;
+package com.mcmanuel.AssesmentApplication.domain.box.entity;
 
 public enum State{
     IDLE,

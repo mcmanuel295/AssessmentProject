@@ -1,4 +1,4 @@
-package com.mcmanuel.AssesmentApplication.domain.box;
+package com.mcmanuel.AssesmentApplication.domain.box.entity;
 
 import com.mcmanuel.AssesmentApplication.domain.Camera;
 import jakarta.persistence.*;
