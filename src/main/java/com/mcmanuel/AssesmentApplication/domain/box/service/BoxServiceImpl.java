@@ -28,7 +28,6 @@ public class BoxServiceImpl implements BoxService {
         BoxEntity box = BoxEntity.builder()
                 .txRef(boxRequest.txRef())
                 .items(boxRequest.items())
-                .cameras(boxRequest.cameras())
                 .build();
 
         box.getBattery().setBatteryCapacity(100);
