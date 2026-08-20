@@ -2,6 +2,7 @@ package com.mcmanuel.AssesmentApplication.domain.box.service;
 
 import com.mcmanuel.AssesmentApplication.domain.box.dto.BoxDto;
 import com.mcmanuel.AssesmentApplication.domain.box.entity.BoxEntity;
+import com.mcmanuel.AssesmentApplication.domain.pojo.Battery;
 import com.mcmanuel.AssesmentApplication.domain.pojo.Item;
 import com.mcmanuel.AssesmentApplication.domain.box.entity.State;
 import com.mcmanuel.AssesmentApplication.domain.box.mapper.DtoMapper;
@@ -25,12 +26,13 @@ public class BoxServiceImpl implements BoxService {
         if (availableBox.isPresent()) {
             throw new RuntimeException("TxRef name already exist");
         }
+
         BoxEntity box = BoxEntity.builder()
                 .txRef(boxRequest.txRef())
                 .items(boxRequest.items())
                 .build();
 
-        box.getBattery().setBatteryCapacity(100);
+        box.setBattery(new Battery(100));
 //       assumed weight if an empty box
         box.setWeight(10);
         box.setState(State.IDLE);
