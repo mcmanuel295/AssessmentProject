@@ -8,7 +8,7 @@ spring:
     url: jdbc:mysql://localhost:3306:/assessment_db
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    database-platform: org.
+    database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: update
     database: MYSQL
