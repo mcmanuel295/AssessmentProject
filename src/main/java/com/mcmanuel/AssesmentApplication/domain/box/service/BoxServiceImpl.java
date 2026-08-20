@@ -31,10 +31,9 @@ public class BoxServiceImpl implements BoxService {
                 .cameras(boxRequest.cameras())
                 .build();
 
-        box.setBatteryLevel(100);
+        box.getBattery().setBatteryCapacity(100);
 //       assumed weight if an empty box
         box.setWeight(10);
-        box.setBatteryLevel(100);
         box.setState(State.IDLE);
 
         return DtoMapper.toDto(repo.save(box));
@@ -65,7 +64,7 @@ public class BoxServiceImpl implements BoxService {
         BoxEntity box =repo.findByTxRef(txRef).orElseThrow(  () -> new RuntimeException("Box with reference "+txRef+" not found"));
 
         //  checking battery percent before loading
-        if (box.getBatteryLevel()< 25) {
+        if (box.getBattery().getBatteryCapacity()< 25) {
             throw new RuntimeException("Unable to load box, battery too low");
         }
 
@@ -94,7 +93,7 @@ public class BoxServiceImpl implements BoxService {
     @Override
     public List<BoxDto> getAvailableBoxes() {
         return repo.findAll().stream()
-                .filter(box -> (box.getWeight()<500 && box.getBatteryLevel()>25) || box.getState().equals(State.IDLE))
+                .filter(box -> (box.getWeight()<500 && box.getBattery().getBatteryCapacity() >25) || box.getState().equals(State.IDLE))
                 .map(DtoMapper::toDto)
                 .toList();
     }
@@ -102,6 +101,6 @@ public class BoxServiceImpl implements BoxService {
     @Override
     public Optional<Integer> checkBatteryLevel(String txRef) {
         BoxEntity box =repo.findByTxRef(txRef).orElseThrow(  () -> new RuntimeException("Box with reference "+txRef+" not found"));
-        return Optional.of(box.getBatteryLevel());
+        return Optional.of(box.getBattery().getBatteryCapacity());
     }
 }
