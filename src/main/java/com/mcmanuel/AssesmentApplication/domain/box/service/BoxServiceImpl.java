@@ -66,10 +66,9 @@ public class BoxServiceImpl implements BoxService {
             box.getItems().add(singleItem);
             box.setWeight(box.getWeight()+singleItem.getItemWeight());
 
+        }
             repo.save(box);
             box.setState(State.LOADED);
-        }
-
             return DtoMapper.toDto(box);
     }
 
